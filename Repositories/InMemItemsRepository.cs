@@ -24,14 +24,9 @@ namespace Catalog.Repositories
             return items;
         }
 
-        public Item GetItem(Guid id)
+        public Item? GetItem(Guid id)
         {
-            var obj = items.Where(item => item.Id == id).SingleOrDefault();
-            if (obj != null)
-            {
-                return obj;
-            }
-            return new Item();
+            return items.Where(item => item.Id == id).SingleOrDefault();
         }
     }
 }
